@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#14532d" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)" />
+  <circle cx="256" cy="256" r="220" stroke="#22c55e" stroke-width="4" stroke-opacity="0.3" fill="none" />
+  <!-- Sun / Clock Horizon -->
+  <path d="M128 320 Q256 160 384 320" stroke="url(#sunGrad)" stroke-width="16" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+  <!-- Figure in stretch/mobility pose -->
+  <circle cx="256" cy="180" r="32" fill="#4ade80" />
+  <path d="M256 220 L256 310 M256 250 L190 200 M256 250 L322 200 M256 310 L200 400 M256 310 L312 400" stroke="#22c55e" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- 6:00 AM badge -->
+  <rect x="176" y="420" width="160" height="42" rx="21" fill="#22c55e" />
+  <text x="256" y="449" font-family="-apple-system, sans-serif" font-size="22" font-weight="bold" fill="#0b0f19" text-anchor="middle">06:00 AM</text>
+</svg>

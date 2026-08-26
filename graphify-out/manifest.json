@@ -1,0 +1,177 @@
+{
+  "package.json": {
+    "mtime": 1787752380.8779533,
+    "ast_hash": "2969f7d8c1c5a8b869325a81b6717a26",
+    "semantic_hash": ""
+  },
+  "postcss.config.js": {
+    "mtime": 1787752402.7994833,
+    "ast_hash": "470cfd3ee10fbff840b377e769485f3e",
+    "semantic_hash": ""
+  },
+  "public/manifest.json": {
+    "mtime": 1787752422.150747,
+    "ast_hash": "a37c7d8d1e4ea0045f31708444c4398a",
+    "semantic_hash": ""
+  },
+  "public/sw.js": {
+    "mtime": 1787752431.3701546,
+    "ast_hash": "d762c7cde7a3e6db4733fa184c2fad57",
+    "semantic_hash": ""
+  },
+  "src/App.tsx": {
+    "mtime": 1787752608.526415,
+    "ast_hash": "402856446f02001b809a115ca626691e",
+    "semantic_hash": ""
+  },
+  "src/components/HabitChecklist.tsx": {
+    "mtime": 1787752634.490028,
+    "ast_hash": "1ae44496b1baf3b4ca967b6a72cef898",
+    "semantic_hash": ""
+  },
+  "src/components/HeatmapCalendar.tsx": {
+    "mtime": 1787752573.4813697,
+    "ast_hash": "e129d0f31be437ae0f7ec3314a487ab8",
+    "semantic_hash": ""
+  },
+  "src/components/InstallPwaBanner.tsx": {
+    "mtime": 1787752598.3121295,
+    "ast_hash": "deefc1b18315e89887cd2f15974de4ec",
+    "semantic_hash": ""
+  },
+  "src/components/MorningModule.tsx": {
+    "mtime": 1787752639.8970492,
+    "ast_hash": "c9d1ef0f3f09798b0df7d33d0151337a",
+    "semantic_hash": ""
+  },
+  "src/components/Navbar.tsx": {
+    "mtime": 1787752644.1894844,
+    "ast_hash": "d0313c1fd8adc6193820650ce5118fdd",
+    "semantic_hash": ""
+  },
+  "src/components/PhaseSelector.tsx": {
+    "mtime": 1787752648.796929,
+    "ast_hash": "2bda2c0c00086522ea5f9406a4355a63",
+    "semantic_hash": ""
+  },
+  "src/components/SessionTimer.tsx": {
+    "mtime": 1787752629.3012838,
+    "ast_hash": "20c946c63a380ce9912aac24cfddfb4c",
+    "semantic_hash": ""
+  },
+  "src/components/SettingsModal.tsx": {
+    "mtime": 1787752590.6705565,
+    "ast_hash": "fd8f0926a0133297fe6cec73204e46f5",
+    "semantic_hash": ""
+  },
+  "src/components/StatsPanel.tsx": {
+    "mtime": 1787752654.2174878,
+    "ast_hash": "c4b8d3f7af155a3c6ccea3e7006e6dd8",
+    "semantic_hash": ""
+  },
+  "src/components/WeekDaySelector.tsx": {
+    "mtime": 1787752548.1033497,
+    "ast_hash": "ad84b77c48734b5f4adfcac64c16ab8d",
+    "semantic_hash": ""
+  },
+  "src/components/WorkoutCard.tsx": {
+    "mtime": 1787752660.084343,
+    "ast_hash": "b395c4f03ec3d69d206ffb92ba58fd56",
+    "semantic_hash": ""
+  },
+  "src/components/YouTubeEmbed.tsx": {
+    "mtime": 1787752665.2578824,
+    "ast_hash": "771ca25267e746cc4359c0f8e14a1778",
+    "semantic_hash": ""
+  },
+  "src/data/workoutProgram.ts": {
+    "mtime": 1787752479.2749567,
+    "ast_hash": "4bd8078aad15e96b9ff7bb0850855465",
+    "semantic_hash": ""
+  },
+  "src/hooks/useMorningAlarm.ts": {
+    "mtime": 1787752511.1420152,
+    "ast_hash": "b3224cc965f34b9a2173d49ff6e855d9",
+    "semantic_hash": ""
+  },
+  "src/hooks/useTimer.ts": {
+    "mtime": 1787752506.4649324,
+    "ast_hash": "3233fcff891ce2ff29a7621471242fe7",
+    "semantic_hash": ""
+  },
+  "src/hooks/useWorkoutProgress.ts": {
+    "mtime": 1787752670.977641,
+    "ast_hash": "9e517a44f05169ce9b059722a5a886d7",
+    "semantic_hash": ""
+  },
+  "src/main.tsx": {
+    "mtime": 1787752613.146541,
+    "ast_hash": "1d90a444cc0598b9ab6b1baae9de52a8",
+    "semantic_hash": ""
+  },
+  "src/services/notificationService.ts": {
+    "mtime": 1787752486.8709967,
+    "ast_hash": "bc58754ae3b2299146afc57a2f58373f",
+    "semantic_hash": ""
+  },
+  "src/services/soundService.ts": {
+    "mtime": 1787752483.7234514,
+    "ast_hash": "8eb81a828626f0d86416d8ac6b44e243",
+    "semantic_hash": ""
+  },
+  "src/services/storageService.ts": {
+    "mtime": 1787752501.6336353,
+    "ast_hash": "cf9abfb5d30ec133e810d91af354f03a",
+    "semantic_hash": ""
+  },
+  "src/services/supabaseClient.ts": {
+    "mtime": 1787752674.641974,
+    "ast_hash": "199db6f500546735f1518245b894789d",
+    "semantic_hash": ""
+  },
+  "src/types/index.ts": {
+    "mtime": 1787752445.0905395,
+    "ast_hash": "9ed1c85d10bb8329fb8773c11423a62b",
+    "semantic_hash": ""
+  },
+  "tailwind.config.js": {
+    "mtime": 1787752402.749097,
+    "ast_hash": "e9e823b287bc6e133633532bfa92ece4",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1787752624.2371213,
+    "ast_hash": "4fcf98fd80f108453d3593bc1d6829c5",
+    "semantic_hash": ""
+  },
+  "vite.config.ts": {
+    "mtime": 1787752399.07617,
+    "ast_hash": "353c930194d9cfe62cb20210ca98ff80",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1787752718.5235748,
+    "ast_hash": "11309b00f919cf30063cb9f72a61a27f",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1787752418.7161584,
+    "ast_hash": "ca9f2e414d870e179c60f61e8e61d71d",
+    "semantic_hash": ""
+  },
+  "public/favicon.svg": {
+    "mtime": 1787752435.8054245,
+    "ast_hash": "0e52791cda54a899d77eac884262a2ff",
+    "semantic_hash": ""
+  },
+  "public/icon-192.svg": {
+    "mtime": 1787752435.8024254,
+    "ast_hash": "0e52791cda54a899d77eac884262a2ff",
+    "semantic_hash": ""
+  },
+  "public/icon-512.svg": {
+    "mtime": 1787752435.7988954,
+    "ast_hash": "0e52791cda54a899d77eac884262a2ff",
+    "semantic_hash": ""
+  }
+}
