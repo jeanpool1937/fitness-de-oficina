@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Play, Film, ExternalLink } from "lucide-react";
-import { OFFICIAL_VIDEOS } from "../data/workoutProgram";
+import { CURATED_WORKOUT_VIDEOS } from "../data/workoutProgram";
 
 interface YouTubeEmbedProps {
   videoId: string;
@@ -18,19 +18,13 @@ export const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
   const [activeVideoId, setActiveVideoId] = useState<string>(videoId);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
 
-  // Sincronizar si cambia el prop
+  // Sincronizar si cambia el prop al navegar entre días
   React.useEffect(() => {
     setActiveVideoId(videoId);
     setIsPlaying(false);
   }, [videoId]);
 
-  const VIDEO_OPTIONS = [
-    { id: OFFICIAL_VIDEOS.MOVILIDAD_POSTURA, label: "Movilidad & Postura", trainer: "Sergio Peinado" },
-    { id: OFFICIAL_VIDEOS.CARDIO_CERO_IMPACTO, label: "Cardio Cero Impacto", trainer: "Sergio Peinado" },
-    { id: OFFICIAL_VIDEOS.FUERZA_PRINCIPIANTES, label: "Fuerza Principiantes", trainer: "Chuy Almada" },
-    { id: OFFICIAL_VIDEOS.RUTINA_COMPLETA, label: "Rutina Completa Total", trainer: "Sergio Peinado" },
-    { id: OFFICIAL_VIDEOS.CIRCUITO_AVANZADO, label: "Circuito Metabólico", trainer: "Pipe Arenas" },
-  ];
+  const allCuratedVideos = Object.values(CURATED_WORKOUT_VIDEOS);
 
   const handleSelectVideo = (id: string) => {
     setActiveVideoId(id);
@@ -45,7 +39,7 @@ export const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
       {/* Video Player Container (16:9 Aspect Ratio) */}
       <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 shadow-2xl group">
         {!isPlaying ? (
-          // Custom Cover / Thumbnail with Play Overlay (Prevents auto heavy loading on iOS)
+          // Custom Cover / Thumbnail with Play Overlay (Prevents heavy auto loading on mobile)
           <div className="relative w-full h-full flex items-center justify-center bg-slate-900">
             <img
               src={`https://img.youtube.com/vi/${activeVideoId}/maxresdefault.jpg`}
@@ -79,7 +73,7 @@ export const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
             </div>
           </div>
         ) : (
-          // Embebed IFrame
+          // Embedded IFrame
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${activeVideoId}?autoplay=1&rel=0&playsinline=1&modestbranding=1`}
             title={title}
@@ -90,12 +84,12 @@ export const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
         )}
       </div>
 
-      {/* Alternative Official Videos Quick Switcher */}
-      <div className="glass-panel rounded-xl p-2.5 sm:p-3">
-        <div className="flex items-center justify-between gap-2 mb-2 px-1">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+      {/* Alternative Curated Videos Quick Selector */}
+      <div className="glass-panel rounded-2xl p-3 sm:p-4 space-y-2.5">
+        <div className="flex items-center justify-between gap-2 px-1">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
             <Film className="w-3.5 h-3.5 text-brand-400" />
-            Videos Oficiales del Programa (15 min)
+            <span>Biblioteca de Entrenamientos Guiados (15 min)</span>
           </span>
           <a
             href={`https://www.youtube.com/watch?v=${activeVideoId}`}
@@ -103,27 +97,30 @@ export const YouTubeEmbed: React.FC<YouTubeEmbedProps> = ({
             rel="noopener noreferrer"
             className="text-[11px] text-slate-400 hover:text-brand-400 flex items-center gap-1 transition-colors"
           >
-            <span>Ver en YouTube</span>
+            <span>Abrir en YouTube</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>
 
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
-          {VIDEO_OPTIONS.map((opt) => {
-            const isSelected = opt.id === activeVideoId;
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
+          {allCuratedVideos.map((video) => {
+            const isSelected = video.id === activeVideoId;
             return (
               <button
-                key={opt.id}
-                onClick={() => handleSelectVideo(opt.id)}
-                className={`flex-shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all border ${
+                key={video.id + video.title}
+                onClick={() => handleSelectVideo(video.id)}
+                className={`flex-shrink-0 p-2.5 rounded-xl text-xs font-semibold transition-all border text-left max-w-[200px] flex flex-col justify-between ${
                   isSelected
-                    ? "bg-brand-500/20 border-brand-500 text-brand-300 shadow-sm"
-                    : "bg-slate-800/60 border-slate-700/60 text-slate-400 hover:text-slate-200 hover:bg-slate-700/60"
+                    ? "bg-brand-500/20 border-brand-500 text-brand-300 shadow-md ring-1 ring-brand-500/40"
+                    : "bg-slate-900/60 border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800"
                 }`}
               >
-                <div className="text-left">
-                  <div className="font-bold text-[11px] leading-tight">{opt.label}</div>
-                  <div className="text-[9px] text-slate-400 font-normal">{opt.trainer}</div>
+                <div className="font-bold text-[11px] leading-tight line-clamp-1">
+                  {video.title}
+                </div>
+                <div className="flex items-center justify-between gap-1 mt-1 text-[10px] text-slate-400 font-normal">
+                  <span className="truncate">{video.trainer}</span>
+                  <span className="text-brand-400 font-mono font-bold">15m</span>
                 </div>
               </button>
             );

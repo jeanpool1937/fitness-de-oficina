@@ -1,7 +1,7 @@
 {
   "package.json": {
-    "mtime": 1787835809.63076,
-    "ast_hash": "6be773b40049d1201a95514a8a8dbd0d",
+    "mtime": 1788119142.2508771,
+    "ast_hash": "b3702529b2be4dacb4e9bd39fd23fec5",
     "semantic_hash": ""
   },
   "postcss.config.js": {
@@ -80,13 +80,13 @@
     "semantic_hash": ""
   },
   "src/components/YouTubeEmbed.tsx": {
-    "mtime": 1787752665.2578824,
-    "ast_hash": "771ca25267e746cc4359c0f8e14a1778",
+    "mtime": 1788120409.374077,
+    "ast_hash": "2c915f206ad1312872b01ccbd51bc670",
     "semantic_hash": ""
   },
   "src/data/workoutProgram.ts": {
-    "mtime": 1787752479.2749567,
-    "ast_hash": "4bd8078aad15e96b9ff7bb0850855465",
+    "mtime": 1788120381.3645844,
+    "ast_hash": "bd802c48baf67d036ab5d50136ac3d96",
     "semantic_hash": ""
   },
   "src/hooks/useMorningAlarm.ts": {
@@ -125,8 +125,8 @@
     "semantic_hash": ""
   },
   "src/services/supabaseClient.ts": {
-    "mtime": 1787752674.641974,
-    "ast_hash": "199db6f500546735f1518245b894789d",
+    "mtime": 1788119473.2239957,
+    "ast_hash": "c8fc09224932e10087fdabf5a1ac444e",
     "semantic_hash": ""
   },
   "src/types/index.ts": {
@@ -185,8 +185,8 @@
     "semantic_hash": ""
   },
   "src/components/workoutCool/ExerciseBrowser.tsx": {
-    "mtime": 1788115449.2019758,
-    "ast_hash": "6a48c7ed2c7f69beb317bb08d4382b09",
+    "mtime": 1788119803.3081322,
+    "ast_hash": "c3b9dfd1860caffdb34cf36517792d56",
     "semantic_hash": ""
   },
   "src/components/workoutCool/MuscleMap.tsx": {
@@ -195,13 +195,23 @@
     "semantic_hash": ""
   },
   "src/data/workoutCoolDatabase.ts": {
-    "mtime": 1788115328.8803387,
-    "ast_hash": "4c7497e941161c57712aaf9c263f1675",
+    "mtime": 1788119749.7709758,
+    "ast_hash": "fa0a90e7dce6a8e37e4a478db6b66ab6",
     "semantic_hash": ""
   },
   "vercel.json": {
     "mtime": 1787835780.6649225,
     "ast_hash": "d35fea0bc6018e2afa819815b6d3d4de",
+    "semantic_hash": ""
+  },
+  "src/components/workoutCool/ExerciseVisualGraphic.tsx": {
+    "mtime": 1788119765.1091292,
+    "ast_hash": "0d7b1f5f055ca235ec6bc8ad7f68b68b",
+    "semantic_hash": ""
+  },
+  "supabase/migrations/20260830_init_fitness_progress.sql": {
+    "mtime": 1788119188.3837335,
+    "ast_hash": "94e522fd3b91c457d31a479f8d46e48f",
     "semantic_hash": ""
   }
 }

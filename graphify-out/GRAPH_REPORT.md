@@ -1,16 +1,16 @@
 # Graph Report - lucid-bose  (2026-08-30)
 
 ## Corpus Check
-- 37 files · ~20,591 words
+- 39 files · ~22,911 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 193 nodes · 312 edges · 15 communities (14 shown, 1 thin omitted)
+- 201 nodes · 321 edges · 15 communities (14 shown, 1 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `8f224610`
+- Built from commit: `39787fa0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -41,10 +41,10 @@
 10. `useMorningAlarm()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `App()` --calls--> `getTodayDateString()`  [EXTRACTED]
-  src/App.tsx → src/services/storageService.ts
 - `SettingsModalProps` --references--> `UserProgress`  [EXTRACTED]
   src/components/SettingsModal.tsx → src/types/index.ts
+- `App()` --calls--> `getTodayDateString()`  [EXTRACTED]
+  src/App.tsx → src/services/storageService.ts
 - `StatsPanelProps` --references--> `UserProgress`  [EXTRACTED]
   src/components/StatsPanel.tsx → src/types/index.ts
 - `WeekDaySelectorProps` --references--> `Phase`  [EXTRACTED]
@@ -58,24 +58,24 @@
 ## Communities (15 total, 1 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.13
-Nodes (16): PhaseSelector(), PhaseSelectorProps, WeekDaySelector(), WeekDaySelectorProps, WorkoutCard(), WorkoutCardProps, YouTubeEmbed(), YouTubeEmbedProps (+8 more)
+Cohesion: 0.10
+Nodes (20): PhaseSelector(), PhaseSelectorProps, WeekDaySelector(), WeekDaySelectorProps, WorkoutCard(), WorkoutCardProps, YouTubeEmbed(), YouTubeEmbedProps (+12 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.13
-Nodes (19): BeforeInstallPromptEvent, InstallPwaBanner(), MorningModule(), MorningModuleProps, ExerciseItem, MUSCLE_GROUPS, MuscleGroup, WORKOUT_COOL_EXERCISES (+11 more)
+Cohesion: 0.12
+Nodes (21): BeforeInstallPromptEvent, InstallPwaBanner(), MorningModule(), MorningModuleProps, ExerciseItem, MUSCLE_GROUPS, MuscleGroup, WORKOUT_COOL_EXERCISES (+13 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.12
-Nodes (16): devDependencies, autoprefixer, postcss, tailwindcss, @types/canvas-confetti, @types/react, @types/react-dom, typescript (+8 more)
+Cohesion: 0.11
+Nodes (17): devDependencies, autoprefixer, postcss, supabase, tailwindcss, @types/canvas-confetti, @types/react, @types/react-dom (+9 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, lib, module, moduleResolution, noEmit (+10 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.13
-Nodes (21): HeatmapCalendar(), HeatmapCalendarProps, Navbar(), NavbarProps, SettingsModal(), SettingsModalProps, StatsPanel(), StatsPanelProps (+13 more)
+Cohesion: 0.20
+Nodes (12): HabitChecklist(), HabitChecklistProps, HeatmapCalendar(), HeatmapCalendarProps, StatsPanel(), StatsPanelProps, calculateStreaks(), formatDateDisplay() (+4 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.24
@@ -94,15 +94,15 @@ Cohesion: 0.17
 Nodes (11): 1. 🌅 Módulo 6:00 AM y Recordatorios, 2. 📺 Visor de Rutinas Diarias y Video, 3. ✅ Checklist, Hábitos y Analíticas, 4. ☁️ Sincronización Cross-Device y Fallback Offline, 5. 📱 PWA & Optimización iOS Mobile-First, 🌟 Características Principales, 🚀 Comandos de Terminal, ☁️ Configuración de Supabase (Opcional) (+3 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.67
-Nodes (3): HabitChecklist(), HabitChecklistProps, formatDateDisplay()
+Cohesion: 0.29
+Nodes (9): Navbar(), NavbarProps, SettingsModal(), SettingsModalProps, clearSupabaseConfig(), getSupabaseClient(), getSupabaseConfig(), saveSupabaseConfig() (+1 more)
 
 ### Community 10 - "Community 10"
 Cohesion: 0.12
 Nodes (16): dependencies, canvas-confetti, clsx, lucide-react, react, react-dom, @supabase/supabase-js, tailwind-merge (+8 more)
 
 ## Knowledge Gaps
-- **81 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+76 more)
+- **84 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+79 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -116,10 +116,10 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `devDependencies` connect `Community 2` to `Community 10`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _81 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _84 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.12648221343873517 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1010752688172043 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.13227513227513227 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11612903225806452 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
