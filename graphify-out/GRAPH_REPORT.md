@@ -1,7 +1,7 @@
 # Graph Report - lucid-bose  (2026-08-30)
 
 ## Corpus Check
-- 39 files · ~21,557 words
+- 39 files · ~21,418 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b7818ae2`
+- Built from commit: `f8d2a5d0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

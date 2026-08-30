@@ -4,7 +4,7 @@ export const TRAINERS: Record<string, TrainerInfo> = {
   "Sergio Peinado": {
     name: "Sergio Peinado",
     avatar: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=100",
-    role: "Licenciado en Ciencias del Deporte",
+    role: "Licenciado en Ciencias de la Actividad Física y del Deporte",
     channel: "Entrena con Sergio Peinado"
   },
   "María Martínez (Siéntete Joven)": {
@@ -13,23 +13,17 @@ export const TRAINERS: Record<string, TrainerInfo> = {
     role: "Especialista en Cardio Bajo Impacto y Salud Postural",
     channel: "Siéntete Joven"
   },
-  "Elena Malova": {
-    name: "Elena Malova",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100",
-    role: "Instructora Internacional de Yoga y Flexibilidad",
-    channel: "MalovaElena"
-  },
   "Chuy Almada": {
     name: "Chuy Almada",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
-    role: "Entrenador de Fuerza Funcional y Cardio Box",
+    role: "Entrenador de Fuerza Funcional, Boxeo y Condición Física",
     channel: "Chuy Almada"
   }
 };
 
-// 35 Videos 100% REALES, PÚBLICOS Y VERIFICADOS CON oEmbed DE YOUTUBE
+// Colección de videos 100% REALES de EJERCICIOS Y ENTRENAMIENTOS (Cero Yoga)
 export const CURATED_WORKOUT_VIDEOS = {
-  // 1. MOVILIDAD ARTICULAR & DESPERTAR (6:00 AM)
+  // 1. MOVILIDAD ARTICULAR, ESTIRAMIENTO Y CALENTAMIENTO (SERGIO PEINADO)
   SP_ESTIRAR_MOVILIDAD: {
     id: "Pnbwyxh4LJs",
     title: "Ejercicios para Estirar y Aumentar tu Movilidad",
@@ -39,9 +33,9 @@ export const CURATED_WORKOUT_VIDEOS = {
   },
   SP_GANAR_FLEXIBILIDAD: {
     id: "ZqbWXx3xcuY",
-    title: "Estiramientos para Ganar Flexibilidad y Movilidad",
+    title: "Estiramientos para Ganar Flexibilidad Muscular",
     trainer: "Sergio Peinado",
-    category: "movilidad" as const,
+    category: "recuperacion" as const,
     durationMinutes: 15
   },
   SP_CALENTAMIENTO: {
@@ -53,13 +47,13 @@ export const CURATED_WORKOUT_VIDEOS = {
   },
   SP_RUTINA_PRINCIPIANTES: {
     id: "WnYR9zSHyKw",
-    title: "Rutina Completa para Principiantes en Casa",
+    title: "Rutina Completa en Casa: Cardio + Fuerza + Abdominales",
     trainer: "Sergio Peinado",
-    category: "movilidad" as const,
+    category: "fuerza" as const,
     durationMinutes: 15
   },
 
-  // 2. ESPALDA RECTA & FUERZA POSTURAL
+  // 2. ESPALDA, POSTURA Y BRAZOS (SERGIO PEINADO)
   SP_TOP8_ESPALDA: {
     id: "WQRr_r43wvA",
     title: "Top 8 Ejercicios para una Espalda Fuerte y Sin Dolor",
@@ -96,7 +90,7 @@ export const CURATED_WORKOUT_VIDEOS = {
     durationMinutes: 15
   },
 
-  // 3. CARDIO BAJO IMPACTO (SIN SALTOS - IDEAL OFICINA/DEPA)
+  // 3. CARDIO BAJO IMPACTO Y QUEMA CALORÍAS (MARÍA MARTÍNEZ)
   MM_CARDIO_30: {
     id: "uQ2ba_Y2XXk",
     title: "Cardio Bajo Impacto para Adelgazar Rápido",
@@ -132,8 +126,22 @@ export const CURATED_WORKOUT_VIDEOS = {
     category: "cardio" as const,
     durationMinutes: 15
   },
+  MM_CARDIO_CUERPO_COMPLETO: {
+    id: "eh_dr7au4K0",
+    title: "Cardio Dinámico Todo el Cuerpo Sin Saltos",
+    trainer: "María Martínez (Siéntete Joven)",
+    category: "cardio" as const,
+    durationMinutes: 15
+  },
+  MM_CARDIO_BAJO_IMPACTO_2: {
+    id: "DvSv27X5Bz8",
+    title: "Cardio Quema Grasa Rápido - Bajo Impacto",
+    trainer: "María Martínez (Siéntete Joven)",
+    category: "cardio" as const,
+    durationMinutes: 15
+  },
 
-  // 4. FUERZA & RESISTENCIA FUNCIONAL (CHUY ALMADA)
+  // 4. FUERZA FUNCIONAL, TREN INFERIOR Y CORE (CHUY ALMADA)
   CHUY_PRINCIPIANTES_20: {
     id: "y9-_6xBgJbE",
     title: "Rutina de Ejercicio para Principiantes en Casa",
@@ -175,57 +183,6 @@ export const CURATED_WORKOUT_VIDEOS = {
     trainer: "Chuy Almada",
     category: "fuerza" as const,
     durationMinutes: 15
-  },
-
-  // 5. YOGA MATUTINO DE PIE & VITALIDAD (ELENA MALOVA)
-  MALOVA_YOGA_15_COMPLETO: {
-    id: "5937MGI0Cfg",
-    title: "Yoga 15 Minutos para Cuerpo Completo",
-    trainer: "Elena Malova",
-    category: "movilidad" as const,
-    durationMinutes: 15
-  },
-  MALOVA_YOGA_BUENA_ENERGIA: {
-    id: "4VJ8N3JX9GI",
-    title: "Yoga en 15 Min para Buena Energía y Vitalidad",
-    trainer: "Elena Malova",
-    category: "movilidad" as const,
-    durationMinutes: 15
-  },
-  MALOVA_YOGA_DE_PIE: {
-    id: "VrudCadFNLY",
-    title: "Yoga en 15 Min de Pie para Energizar Todo el Cuerpo",
-    trainer: "Elena Malova",
-    category: "movilidad" as const,
-    durationMinutes: 15
-  },
-  MALOVA_YOGA_INTENSO: {
-    id: "MX08y-B2jCw",
-    title: "Yoga en 15 Minutos Entretenido e Intenso",
-    trainer: "Elena Malova",
-    category: "movilidad" as const,
-    durationMinutes: 15
-  },
-  MALOVA_YOGA_VINYASA: {
-    id: "GjjdAfoTtfY",
-    title: "Yoga en 15 Minutos | Yoga Vinyasa Dinámico",
-    trainer: "Elena Malova",
-    category: "movilidad" as const,
-    durationMinutes: 15
-  },
-  MALOVA_YOGA_CASA_TOTAL: {
-    id: "BFJnw_7Q6wg",
-    title: "Yoga en Casa para Todo el Cuerpo",
-    trainer: "Elena Malova",
-    category: "recuperacion" as const,
-    durationMinutes: 15
-  },
-  MALOVA_YOGA_VINYASA_15: {
-    id: "RXdiq_UJ-SM",
-    title: "Vinyasa Yoga 15 Minutos | Clase Completa",
-    trainer: "Elena Malova",
-    category: "recuperacion" as const,
-    durationMinutes: 15
   }
 };
 
@@ -259,8 +216,8 @@ export const PHASES: Phase[] = [
     startWeek: 9,
     endWeek: 12,
     badge: "🔥 Máxima Energía",
-    goal: "Máxima vitalidad mental y física para afrontar jornadas intensas de trabajo.",
-    description: "Circuitos dinámicos de alta densidad, fuerza funcional completa y control postural absoluto.",
+    goal: "Máxima vitalidad física para afrontar jornadas intensas de trabajo.",
+    description: "Circuitos de ejercicios dinámicos, fuerza funcional completa y control postural absoluto.",
     accentColor: "from-amber-500 to-orange-600"
   }
 ];
@@ -268,13 +225,13 @@ export const PHASES: Phase[] = [
 const DAY_NAMES = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 const DAY_SHORTS = ["LUN", "MAR", "MIÉ", "JUE", "VIE", "SÁB", "DOM"];
 
-// Matriz de rotación con los 35 videos verificados
+// Matriz de rotación exclusiva de EJERCICIOS (100% libres de yoga)
 const ROTATION_VIDEOS = {
-  // Lunes: Movilidad y Despertar Articular
+  // Lunes: Movilidad y Activación Articular
   lunes: [
     CURATED_WORKOUT_VIDEOS.SP_ESTIRAR_MOVILIDAD,
-    CURATED_WORKOUT_VIDEOS.SP_GANAR_FLEXIBILIDAD,
     CURATED_WORKOUT_VIDEOS.SP_CALENTAMIENTO,
+    CURATED_WORKOUT_VIDEOS.SP_GANAR_FLEXIBILIDAD,
     CURATED_WORKOUT_VIDEOS.SP_RUTINA_PRINCIPIANTES
   ],
   // Martes: Cardio Bajo Impacto Sin Saltos
@@ -291,33 +248,33 @@ const ROTATION_VIDEOS = {
     CURATED_WORKOUT_VIDEOS.SP_ESPALDA_BRAZOS,
     CURATED_WORKOUT_VIDEOS.SP_PECHO_ESPALDA_SIN_PESAS
   ],
-  // Jueves: Fuerza Funcional y Core
+  // Jueves: Fuerza Funcional y Tren Inferior
   jueves: [
     CURATED_WORKOUT_VIDEOS.CHUY_PRINCIPIANTES_20,
     CURATED_WORKOUT_VIDEOS.CHUY_SUPER_AMIGABLE,
     CURATED_WORKOUT_VIDEOS.CHUY_BASICOS_CASA,
     CURATED_WORKOUT_VIDEOS.CHUY_DIA_2
   ],
-  // Viernes: Cardio Dinámico y Energía
+  // Viernes: Cardio Dinámico y Quema Grasa
   viernes: [
     CURATED_WORKOUT_VIDEOS.MM_CARDIO_SIN_SALTOS_2,
     CURATED_WORKOUT_VIDEOS.CHUY_CARDIO_PRINCIPIANTES,
-    CURATED_WORKOUT_VIDEOS.MM_CARDIO_QUEMA_GRASA,
-    CURATED_WORKOUT_VIDEOS.CHUY_DIA_3
+    CURATED_WORKOUT_VIDEOS.MM_CARDIO_CUERPO_COMPLETO,
+    CURATED_WORKOUT_VIDEOS.MM_CARDIO_BAJO_IMPACTO_2
   ],
-  // Sábado: Yoga Matutino de Pie
+  // Sábado: Fuerza de Abdomen, Core y Brazos
   sabado: [
-    CURATED_WORKOUT_VIDEOS.MALOVA_YOGA_DE_PIE,
-    CURATED_WORKOUT_VIDEOS.MALOVA_YOGA_15_COMPLETO,
-    CURATED_WORKOUT_VIDEOS.MALOVA_YOGA_BUENA_ENERGIA,
-    CURATED_WORKOUT_VIDEOS.MALOVA_YOGA_INTENSO
+    CURATED_WORKOUT_VIDEOS.SP_RUTINA_PRINCIPIANTES,
+    CURATED_WORKOUT_VIDEOS.CHUY_DIA_3,
+    CURATED_WORKOUT_VIDEOS.SP_SUSTITUTO_MAQUINAS,
+    CURATED_WORKOUT_VIDEOS.CHUY_BASICOS_CASA
   ],
-  // Domingo: Descarga y Flexibilidad
+  // Domingo: Estiramientos Musculares y Descarga Postural
   domingo: [
-    CURATED_WORKOUT_VIDEOS.MALOVA_YOGA_BUENA_ENERGIA,
-    CURATED_WORKOUT_VIDEOS.MALOVA_YOGA_VINYASA,
-    CURATED_WORKOUT_VIDEOS.MALOVA_YOGA_CASA_TOTAL,
-    CURATED_WORKOUT_VIDEOS.MALOVA_YOGA_VINYASA_15
+    CURATED_WORKOUT_VIDEOS.SP_GANAR_FLEXIBILIDAD,
+    CURATED_WORKOUT_VIDEOS.SP_ESTIRAR_MOVILIDAD,
+    CURATED_WORKOUT_VIDEOS.SP_CALENTAMIENTO,
+    CURATED_WORKOUT_VIDEOS.SP_TOP8_ESPALDA
   ]
 };
 
@@ -326,7 +283,7 @@ function generateAllWorkouts(): WorkoutDay[] {
 
   for (let week = 1; week <= 12; week++) {
     const phaseId = week <= 3 ? 1 : week <= 8 ? 2 : 3;
-    const weekCycleIndex = (week - 1) % 4; // Rotación de 4 videos distintos por cada día de la semana
+    const weekCycleIndex = (week - 1) % 4; // Rotación equilibrada
 
     for (let day = 1; day <= 7; day++) {
       const id = `w${week}-d${day}`;
@@ -340,8 +297,8 @@ function generateAllWorkouts(): WorkoutDay[] {
       let ergonomicTip = "Al llegar al escritorio, ajusta la pantalla a la altura de tus ojos para evitar flexionar el cuello.";
       let executionNotes = [
         "Calentamiento articular guiado (3 min)",
-        "Bloque principal continuo (9 min)",
-        "Estiramiento suave de vuelta a la calma (3 min)"
+        "Bloque principal continuo de ejercicios (9 min)",
+        "Estiramiento muscular de vuelta a la calma (3 min)"
       ];
 
       if (day === 1) {
@@ -352,7 +309,7 @@ function generateAllWorkouts(): WorkoutDay[] {
         ergonomicTip = "Inicia el lunes ajustando tu silla: codos a 90° sobre la mesa y pies firmes en el piso.";
         executionNotes = [
           "Círculos de hombros y retracción escapular (4 min)",
-          "Apertura torácica y respiración diafragmática (4 min)",
+          "Apertura torácica y respiración profunda (4 min)",
           "Desbloqueo lumbopélvico y caderas (4 min)",
           "Vuelta a la calma e hidratación (3 min)"
         ];
@@ -400,33 +357,32 @@ function generateAllWorkouts(): WorkoutDay[] {
         ergonomicTip = "Organiza llamadas de pie o caminando hoy para reducir el tiempo total sentado.";
         executionNotes = [
           "Circuito aeróbico de bajo impacto (5 min)",
-          "Intervalos dinámicos continuos (6 min)",
+          "Intervalos dinámicos de cardio (6 min)",
           "Soltura de articulaciones y brazos (2 min)",
           "Estiramiento restaurativo final (2 min)"
         ];
       } else if (day === 6) {
         vInfo = ROTATION_VIDEOS.sabado[weekCycleIndex];
-        posturalFocus = "Alineación corporal completa y equilibrio neuromuscular sin tensiones.";
-        intensity = "Baja";
-        targetMuscles = ["Columna Vertebral", "Tobillos", "Cadena Posterior", "Psoas"];
-        ergonomicTip = "Sal a caminar al menos 30 minutos al aire libre aprovechando la luz natural de la mañana.";
+        posturalFocus = "Fuerza y tonificación integral de core, brazos y piernas.";
+        intensity = "Media";
+        targetMuscles = ["Core", "Abdomen", "Brazos", "Piernas"];
+        ergonomicTip = "Aprovecha el fin de semana para mantenerte activo y sumar pasos al aire libre.";
         executionNotes = [
-          "Postura de la montaña y respiración profunda (3 min)",
-          "Guerrero I y II para apertura de pelvis (5 min)",
-          "Elongaciones intercostales laterales (4 min)",
-          "Flexión suave hacia adelante y calma (3 min)"
+          "Calentamiento dinámico con flexiones asistidas (3 min)",
+          "Circuito de fuerza y core funcional (9 min)",
+          "Estiramientos musculares de tronco y piernas (3 min)"
         ];
       } else {
         vInfo = ROTATION_VIDEOS.domingo[weekCycleIndex];
-        posturalFocus = "Regeneración fascial, relajación del nervio ciático y descanso profundo.";
+        posturalFocus = "Descarga muscular activa, estiramientos de cadenas posteriores y relajación lumbar.";
         intensity = "Baja";
         targetMuscles = ["Isquiosurales", "Glúteos", "Zona Lumbar", "Cuello"];
         ergonomicTip = "Deja tu ropa de entrenamiento lista al lado de la cama para despertar a las 6:00 AM sin fricción.";
         executionNotes = [
-          "Estiramiento en forma de '4' para piramidal y ciático (4 min)",
-          "Torsiones espinales en suelo (4 min)",
-          "Apertura pasiva de caderas en mariposa (4 min)",
-          "Meditación y respiración diafragmática (3 min)"
+          "Estiramiento en forma de '4' para glúteos y ciático (4 min)",
+          "Descarga lumbar y elongación de espalda (4 min)",
+          "Apertura de cadera y cuádriceps (4 min)",
+          "Respiración diafragmática de relajación (3 min)"
         ];
       }
 
@@ -441,7 +397,7 @@ function generateAllWorkouts(): WorkoutDay[] {
         posturalFocus,
         durationMinutes: 15,
         trainer: vInfo.trainer,
-        trainerRole: TRAINERS[vInfo.trainer]?.role || "Coach de Salud y Movilidad",
+        trainerRole: TRAINERS[vInfo.trainer]?.role || "Coach de Fuerza y Acondicionamiento Físico",
         youtubeId: vInfo.id,
         category: vInfo.category,
         executionNotes,
