@@ -1,16 +1,16 @@
 # Graph Report - lucid-bose  (2026-08-30)
 
 ## Corpus Check
-- 39 files · ~22,911 words
+- 39 files · ~21,557 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 201 nodes · 321 edges · 15 communities (14 shown, 1 thin omitted)
+- 202 nodes · 322 edges · 14 communities (13 shown, 1 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `39787fa0`
+- Built from commit: `b7818ae2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -20,7 +20,6 @@
 - [[_COMMUNITY_Community 2|Community 2]]
 - [[_COMMUNITY_Community 3|Community 3]]
 - [[_COMMUNITY_Community 4|Community 4]]
-- [[_COMMUNITY_Community 5|Community 5]]
 - [[_COMMUNITY_Community 6|Community 6]]
 - [[_COMMUNITY_Community 7|Community 7]]
 - [[_COMMUNITY_Community 8|Community 8]]
@@ -55,15 +54,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (15 total, 1 thin omitted)
+## Communities (14 total, 1 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.10
-Nodes (20): PhaseSelector(), PhaseSelectorProps, WeekDaySelector(), WeekDaySelectorProps, WorkoutCard(), WorkoutCardProps, YouTubeEmbed(), YouTubeEmbedProps (+12 more)
+Nodes (21): PhaseSelector(), PhaseSelectorProps, WeekDaySelector(), WeekDaySelectorProps, WorkoutCard(), WorkoutCardProps, YouTubeEmbed(), YouTubeEmbedProps (+13 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.12
-Nodes (21): BeforeInstallPromptEvent, InstallPwaBanner(), MorningModule(), MorningModuleProps, ExerciseItem, MUSCLE_GROUPS, MuscleGroup, WORKOUT_COOL_EXERCISES (+13 more)
+Nodes (20): BeforeInstallPromptEvent, InstallPwaBanner(), MorningModule(), MorningModuleProps, ExerciseItem, MUSCLE_GROUPS, MuscleGroup, WORKOUT_COOL_EXERCISES (+12 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.11
@@ -77,13 +76,9 @@ Nodes (18): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, l
 Cohesion: 0.20
 Nodes (12): HabitChecklist(), HabitChecklistProps, HeatmapCalendar(), HeatmapCalendarProps, StatsPanel(), StatsPanelProps, calculateStreaks(), formatDateDisplay() (+4 more)
 
-### Community 5 - "Community 5"
-Cohesion: 0.24
-Nodes (4): OfficeBreakTimer(), OfficeBreakTimerProps, NotificationService, NotificationStatus
-
 ### Community 6 - "Community 6"
-Cohesion: 0.24
-Nodes (5): SessionTimer(), SessionTimerProps, TimerOptions, useTimer(), SoundService
+Cohesion: 0.12
+Nodes (10): OfficeBreakTimer(), OfficeBreakTimerProps, SessionTimer(), SessionTimerProps, MorningAlarmState, TimerOptions, useTimer(), NotificationService (+2 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.17
@@ -102,24 +97,24 @@ Cohesion: 0.12
 Nodes (16): dependencies, canvas-confetti, clsx, lucide-react, react, react-dom, @supabase/supabase-js, tailwind-merge (+8 more)
 
 ## Knowledge Gaps
-- **84 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+79 more)
+- **85 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+80 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `SoundService` connect `Community 6` to `Community 0`, `Community 1`, `Community 5`?**
+- **Why does `SoundService` connect `Community 6` to `Community 0`, `Community 1`?**
   _High betweenness centrality (0.034) - this node is a cross-community bridge._
-- **Why does `NotificationService` connect `Community 5` to `Community 1`?**
-  _High betweenness centrality (0.023) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `Community 2` to `Community 10`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _84 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _85 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.1010752688172043 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0967741935483871 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.11612903225806452 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.12315270935960591 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._

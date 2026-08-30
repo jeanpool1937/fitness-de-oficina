@@ -630,7 +630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_officebreaktimer",
-      "community": 5,
+      "community": 6,
       "norm_label": "officebreaktimer.tsx"
     },
     {
@@ -640,7 +640,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_officebreaktimer_officebreaktimerprops",
-      "community": 5,
+      "community": 6,
       "norm_label": "officebreaktimerprops"
     },
     {
@@ -650,7 +650,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_officebreaktimer_officebreaktimer",
-      "community": 5,
+      "community": 6,
       "norm_label": "officebreaktimer()"
     },
     {
@@ -1057,7 +1057,7 @@
       "label": "CURATED_WORKOUT_VIDEOS",
       "file_type": "code",
       "source_file": "src/data/workoutProgram.ts",
-      "source_location": "L42",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "data_workoutprogram_curated_workout_videos",
       "community": 0,
@@ -1067,7 +1067,7 @@
       "label": "PHASES",
       "file_type": "code",
       "source_file": "src/data/workoutProgram.ts",
-      "source_location": "L201",
+      "source_location": "L232",
       "_origin": "ast",
       "id": "data_workoutprogram_phases",
       "community": 0,
@@ -1077,7 +1077,7 @@
       "label": "DAY_NAMES",
       "file_type": "code",
       "source_file": "src/data/workoutProgram.ts",
-      "source_location": "L237",
+      "source_location": "L268",
       "_origin": "ast",
       "id": "data_workoutprogram_day_names",
       "community": 0,
@@ -1087,17 +1087,27 @@
       "label": "DAY_SHORTS",
       "file_type": "code",
       "source_file": "src/data/workoutProgram.ts",
-      "source_location": "L238",
+      "source_location": "L269",
       "_origin": "ast",
       "id": "data_workoutprogram_day_shorts",
       "community": 0,
       "norm_label": "day_shorts"
     },
     {
+      "label": "ROTATION_VIDEOS",
+      "file_type": "code",
+      "source_file": "src/data/workoutProgram.ts",
+      "source_location": "L272",
+      "_origin": "ast",
+      "id": "data_workoutprogram_rotation_videos",
+      "community": 0,
+      "norm_label": "rotation_videos"
+    },
+    {
       "label": "generateAllWorkouts()",
       "file_type": "code",
       "source_file": "src/data/workoutProgram.ts",
-      "source_location": "L240",
+      "source_location": "L324",
       "_origin": "ast",
       "id": "data_workoutprogram_generateallworkouts",
       "community": 0,
@@ -1107,7 +1117,7 @@
       "label": "WORKOUT_PROGRAM",
       "file_type": "code",
       "source_file": "src/data/workoutProgram.ts",
-      "source_location": "L800",
+      "source_location": "L460",
       "_origin": "ast",
       "id": "data_workoutprogram_workout_program",
       "community": 0,
@@ -1117,7 +1127,7 @@
       "label": "getWorkout()",
       "file_type": "code",
       "source_file": "src/data/workoutProgram.ts",
-      "source_location": "L802",
+      "source_location": "L462",
       "_origin": "ast",
       "id": "data_workoutprogram_getworkout",
       "community": 0,
@@ -1127,7 +1137,7 @@
       "label": "getPhase()",
       "file_type": "code",
       "source_file": "src/data/workoutProgram.ts",
-      "source_location": "L807",
+      "source_location": "L467",
       "_origin": "ast",
       "id": "data_workoutprogram_getphase",
       "community": 0,
@@ -1140,7 +1150,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "hooks_usemorningalarm",
-      "community": 1,
+      "community": 6,
       "norm_label": "usemorningalarm.ts"
     },
     {
@@ -1150,7 +1160,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "hooks_usemorningalarm_morningalarmstate",
-      "community": 1,
+      "community": 6,
       "norm_label": "morningalarmstate"
     },
     {
@@ -1240,7 +1250,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_notificationservice",
-      "community": 5,
+      "community": 6,
       "norm_label": "notificationservice.ts"
     },
     {
@@ -1250,7 +1260,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "services_notificationservice_notificationstatus",
-      "community": 5,
+      "community": 6,
       "norm_label": "notificationstatus"
     },
     {
@@ -1260,7 +1270,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "services_notificationservice_notificationservice",
-      "community": 5,
+      "community": 6,
       "norm_label": "notificationservice"
     },
     {
@@ -1270,7 +1280,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "services_notificationservice_notificationservice_getstatus",
-      "community": 5,
+      "community": 6,
       "norm_label": ".getstatus()"
     },
     {
@@ -1280,7 +1290,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "services_notificationservice_notificationservice_requestpermission",
-      "community": 5,
+      "community": 6,
       "norm_label": ".requestpermission()"
     },
     {
@@ -1290,7 +1300,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "services_notificationservice_notificationservice_sendnotification",
-      "community": 5,
+      "community": 6,
       "norm_label": ".sendnotification()"
     },
     {
@@ -1300,7 +1310,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "services_notificationservice_notificationservice_istargettime",
-      "community": 5,
+      "community": 6,
       "norm_label": ".istargettime()"
     },
     {
@@ -2211,9 +2221,9 @@
       "source_file": "package.json",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_supabase",
-      "confidence_score": 1.0
+      "target": "package_devdependencies_supabase"
     },
     {
       "relation": "contains",
@@ -3747,9 +3757,9 @@
       "source_file": "src/components/YouTubeEmbed.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "components_youtubeembed",
-      "target": "data_workoutprogram_curated_workout_videos",
-      "confidence_score": 1.0
+      "target": "data_workoutprogram_curated_workout_videos"
     },
     {
       "relation": "imports_from",
@@ -3886,9 +3896,9 @@
       "source_file": "src/components/workoutCool/ExerciseBrowser.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "workoutcool_exercisebrowser",
-      "target": "workoutcool_exercisevisualgraphic",
-      "confidence_score": 1.0
+      "target": "workoutcool_exercisevisualgraphic"
     },
     {
       "relation": "imports",
@@ -3897,9 +3907,9 @@
       "source_file": "src/components/workoutCool/ExerciseBrowser.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "workoutcool_exercisebrowser",
-      "target": "workoutcool_exercisevisualgraphic_exercisevisualgraphic",
-      "confidence_score": 1.0
+      "target": "workoutcool_exercisevisualgraphic_exercisevisualgraphic"
     },
     {
       "relation": "references",
@@ -3918,9 +3928,9 @@
       "source_file": "src/components/workoutCool/ExerciseVisualGraphic.tsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "workoutcool_exercisevisualgraphic",
-      "target": "workoutcool_exercisevisualgraphic_exercisevisualgraphic",
-      "confidence_score": 1.0
+      "target": "workoutcool_exercisevisualgraphic_exercisevisualgraphic"
     },
     {
       "relation": "contains",
@@ -3928,9 +3938,9 @@
       "source_file": "src/components/workoutCool/ExerciseVisualGraphic.tsx",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "workoutcool_exercisevisualgraphic",
-      "target": "workoutcool_exercisevisualgraphic_exercisevisualgraphicprops",
-      "confidence_score": 1.0
+      "target": "workoutcool_exercisevisualgraphic_exercisevisualgraphicprops"
     },
     {
       "relation": "imports_from",
@@ -4031,9 +4041,9 @@
       "source_file": "src/data/workoutProgram.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_workoutprogram",
-      "target": "data_workoutprogram_curated_workout_videos",
-      "confidence_score": 1.0
+      "target": "data_workoutprogram_curated_workout_videos"
     },
     {
       "relation": "contains",
@@ -4041,9 +4051,9 @@
       "source_file": "src/data/workoutProgram.ts",
       "source_location": "L237",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_workoutprogram",
-      "target": "data_workoutprogram_day_names",
-      "confidence_score": 1.0
+      "target": "data_workoutprogram_day_names"
     },
     {
       "relation": "contains",
@@ -4051,9 +4061,9 @@
       "source_file": "src/data/workoutProgram.ts",
       "source_location": "L238",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_workoutprogram",
-      "target": "data_workoutprogram_day_shorts",
-      "confidence_score": 1.0
+      "target": "data_workoutprogram_day_shorts"
     },
     {
       "relation": "contains",
@@ -4061,9 +4071,9 @@
       "source_file": "src/data/workoutProgram.ts",
       "source_location": "L240",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_workoutprogram",
-      "target": "data_workoutprogram_generateallworkouts",
-      "confidence_score": 1.0
+      "target": "data_workoutprogram_generateallworkouts"
     },
     {
       "relation": "contains",
@@ -4071,9 +4081,9 @@
       "source_file": "src/data/workoutProgram.ts",
       "source_location": "L807",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_workoutprogram",
-      "target": "data_workoutprogram_getphase",
-      "confidence_score": 1.0
+      "target": "data_workoutprogram_getphase"
     },
     {
       "relation": "contains",
@@ -4081,9 +4091,9 @@
       "source_file": "src/data/workoutProgram.ts",
       "source_location": "L802",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "data_workoutprogram",
-      "target": "data_workoutprogram_getworkout",
-      "confidence_score": 1.0
+      "target": "data_workoutprogram_getworkout"
     },
     {
       "relation": "contains",
@@ -4094,6 +4104,16 @@
       "confidence_score": 1.0,
       "source": "data_workoutprogram",
       "target": "data_workoutprogram_phases"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/workoutProgram.ts",
+      "source_location": "L272",
+      "weight": 1.0,
+      "source": "data_workoutprogram",
+      "target": "data_workoutprogram_rotation_videos",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5385,5 +5405,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "39787fa0ac0e54c9ef15717a9431fe54101ac5af"
+  "built_at_commit": "b7818ae2879d13076abc7dd237bb87ff2ba377fb"
 }
