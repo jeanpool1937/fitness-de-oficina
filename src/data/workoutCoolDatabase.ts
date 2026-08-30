@@ -3,8 +3,8 @@ export interface MuscleGroup {
   name: string;
   category: "superior" | "core" | "inferior";
   view: "anterior" | "posterior" | "both";
-  officeRelevance: string; // Por qué le importa al oficinista
-  commonIssues: string; // Patología o molestia típica
+  officeRelevance: string;
+  commonIssues: string;
 }
 
 export interface ExerciseItem {
@@ -14,13 +14,15 @@ export interface ExerciseItem {
   muscleName: string;
   secondaryMuscles: string[];
   equipment: "ninguno" | "escritorio" | "banda" | "mancuerna";
-  durationSeconds: number; // typically 30-60s
+  durationSeconds: number;
   difficulty: "Principiante" | "Intermedio" | "Avanzado";
   officeFocus: "Postura & Cifosis" | "Alivio Lumbar" | "Cuello de Texto" | "Amnesia Glútea" | "Túnel Carpiano" | "Movilidad General";
   instructions: string[];
   breathingTip: string;
   commonMistakes: string;
   iconType: "stretch" | "strength" | "mobility" | "release";
+  youtubeId?: string; // Video ID oficial embebido
+  visualAnimationType?: "neck-tuck" | "neck-stretch" | "chest-open" | "wall-slide" | "scapular" | "chair-row" | "cat-cow" | "plank" | "wrist-stretch" | "hip-flexor" | "glute-bridge" | "piriformis" | "calf-raise";
 }
 
 export const MUSCLE_GROUPS: MuscleGroup[] = [
@@ -126,6 +128,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 45,
     difficulty: "Principiante",
     officeFocus: "Cuello de Texto",
+    youtubeId: "Pnbwyxh4LJs",
+    visualAnimationType: "neck-tuck",
     instructions: [
       "Siéntate erguido con la mirada al frente.",
       "Lleva la barbilla hacia atrás como si quisieras hacerte 'doble mentón', sin inclinar la cabeza hacia abajo.",
@@ -146,6 +150,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 60,
     difficulty: "Principiante",
     officeFocus: "Cuello de Texto",
+    youtubeId: "Pnbwyxh4LJs",
+    visualAnimationType: "neck-stretch",
     instructions: [
       "Sujeta el borde del asiento con una mano para fijar el hombro hacia abajo.",
       "Inclina suavemente la oreja contraria hacia el hombro opuesto.",
@@ -168,6 +174,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 60,
     difficulty: "Principiante",
     officeFocus: "Postura & Cifosis",
+    youtubeId: "Pnbwyxh4LJs",
+    visualAnimationType: "chest-open",
     instructions: [
       "Coloca los antebrazos a 90° sobre el marco de una puerta o esquina.",
       "Da un paso suave hacia adelante hasta sentir la apertura en el pecho.",
@@ -188,6 +196,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 50,
     difficulty: "Intermedio",
     officeFocus: "Postura & Cifosis",
+    youtubeId: "Pnbwyxh4LJs",
+    visualAnimationType: "wall-slide",
     instructions: [
       "Apoya espalda, cabeza y glúteos contra una pared plana.",
       "Coloca los codos y dorso de las manos contra la pared formando una 'W'.",
@@ -210,6 +220,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 45,
     difficulty: "Principiante",
     officeFocus: "Postura & Cifosis",
+    youtubeId: "y9-_6xBgJbE",
+    visualAnimationType: "scapular",
     instructions: [
       "De pie o sentado erguido, abre los brazos a los lados con las palmas hacia adelante.",
       "Gira los pulgares hacia atrás abriendo el pecho al máximo.",
@@ -230,6 +242,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 50,
     difficulty: "Intermedio",
     officeFocus: "Postura & Cifosis",
+    youtubeId: "y9-_6xBgJbE",
+    visualAnimationType: "chair-row",
     instructions: [
       "Siéntate en el borde de la silla con los codos pegados a los costados.",
       "Empuja los codos firmemente contra el respaldo o reposabrazos hacia atrás.",
@@ -252,6 +266,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 60,
     difficulty: "Principiante",
     officeFocus: "Alivio Lumbar",
+    youtubeId: "Pnbwyxh4LJs",
+    visualAnimationType: "cat-cow",
     instructions: [
       "Apoya las manos en el borde del escritorio con rodillas semiflexionadas.",
       "Inhala arqueando suavemente la espalda y mirando al frente (Gato).",
@@ -264,7 +280,7 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
   },
   {
     id: "ex-core-1",
-    title: "Deadbug (Bicho Muerto) o Plancha de Escritorio",
+    title: "Plancha Inclinada de Escritorio con Retroversión",
     muscleId: "abs",
     muscleName: "Abdomen y Core Profundo",
     secondaryMuscles: ["Serrato", "Oblicuos"],
@@ -272,6 +288,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 45,
     difficulty: "Intermedio",
     officeFocus: "Alivio Lumbar",
+    youtubeId: "y9-_6xBgJbE",
+    visualAnimationType: "plank",
     instructions: [
       "Apoya los antebrazos firmemente sobre el escritorio dando 3 pasos hacia atrás.",
       "Forma una línea recta impecable desde los talones hasta la coronilla.",
@@ -294,6 +312,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 45,
     difficulty: "Principiante",
     officeFocus: "Túnel Carpiano",
+    youtubeId: "Pnbwyxh4LJs",
+    visualAnimationType: "wrist-stretch",
     instructions: [
       "Extiende un brazo al frente con la palma hacia adelante (gesto de 'alto').",
       "Con la otra mano, jala suavemente los 4 dedos hacia el cuerpo.",
@@ -316,6 +336,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 60,
     difficulty: "Principiante",
     officeFocus: "Alivio Lumbar",
+    youtubeId: "Pnbwyxh4LJs",
+    visualAnimationType: "hip-flexor",
     instructions: [
       "Da un paso largo hacia atrás apoyando la rodilla trasera en el piso o colchoneta.",
       "Realiza una ligera retroversión pélvica (mete los glúteos).",
@@ -336,6 +358,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 50,
     difficulty: "Principiante",
     officeFocus: "Amnesia Glútea",
+    youtubeId: "WnYR9zSHyKw",
+    visualAnimationType: "glute-bridge",
     instructions: [
       "Acuéstate boca arriba con rodillas flexionadas y pies apoyados al ancho de hombros.",
       "Empuja desde los talones elevando la cadera hasta alinear rodillas, pelvis y hombros.",
@@ -356,6 +380,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 60,
     difficulty: "Principiante",
     officeFocus: "Alivio Lumbar",
+    youtubeId: "Pnbwyxh4LJs",
+    visualAnimationType: "piriformis",
     instructions: [
       "Siéntate en el borde de la silla con la espalda recta.",
       "Cruza el tobillo derecho sobre la rodilla izquierda formando un '4'.",
@@ -378,6 +404,8 @@ export const WORKOUT_COOL_EXERCISES: ExerciseItem[] = [
     durationSeconds: 45,
     difficulty: "Principiante",
     officeFocus: "Movilidad General",
+    youtubeId: "iUrVkJls9y4",
+    visualAnimationType: "calf-raise",
     instructions: [
       "De pie, apoya las yemas de los dedos en el escritorio para equilibrarte.",
       "Elévate sobre la punta de los pies lo más alto posible contrayendo gemelos.",

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ExerciseItem, WORKOUT_COOL_EXERCISES } from "../../data/workoutCoolDatabase";
+import { ExerciseVisualGraphic } from "./ExerciseVisualGraphic";
 import {
   Clock,
   Play,
@@ -11,7 +12,8 @@ import {
   ShieldAlert,
   SlidersHorizontal,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  Video
 } from "lucide-react";
 
 interface ExerciseBrowserProps {
@@ -29,6 +31,7 @@ export const ExerciseBrowser: React.FC<ExerciseBrowserProps> = ({
   const [focusFilter, setFocusFilter] = useState<string>("all");
   const [customRoutine, setCustomRoutine] = useState<ExerciseItem[]>([]);
   const [expandedExerciseId, setExpandedExerciseId] = useState<string | null>(null);
+  const [videoModalExercise, setVideoModalExercise] = useState<ExerciseItem | null>(null);
 
   // Filtrado reactivo de ejercicios
   const filteredExercises = WORKOUT_COOL_EXERCISES.filter((ex) => {
@@ -118,7 +121,7 @@ export const ExerciseBrowser: React.FC<ExerciseBrowserProps> = ({
         </div>
       </div>
 
-      {/* Floating Custom Routine Stacking Tray (If items added) */}
+      {/* Floating Custom Routine Stacking Tray */}
       {customRoutine.length > 0 && (
         <div className="glass-panel-glow rounded-2xl p-4 sm:p-5 border-2 border-brand-500/60 shadow-2xl space-y-3 animate-sunrise">
           <div className="flex items-center justify-between">
@@ -172,8 +175,8 @@ export const ExerciseBrowser: React.FC<ExerciseBrowserProps> = ({
         </div>
       )}
 
-      {/* Grid of Exercise Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Grid of Exercise Cards with Visual Demonstrations */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {filteredExercises.map((exercise) => {
           const isAdded = isExerciseInRoutine(exercise.id);
           const isExpanded = expandedExerciseId === exercise.id;
@@ -181,97 +184,122 @@ export const ExerciseBrowser: React.FC<ExerciseBrowserProps> = ({
           return (
             <div
               key={exercise.id}
-              className={`glass-panel rounded-2xl p-4 sm:p-5 space-y-3 transition-all border ${
+              className={`glass-panel rounded-2xl overflow-hidden transition-all border flex flex-col justify-between ${
                 isAdded
-                  ? "border-brand-500/60 bg-gradient-to-br from-brand-950/30 to-slate-900/80 shadow-lg shadow-brand-500/10"
-                  : "border-slate-800 hover:border-slate-700"
+                  ? "border-brand-500/60 bg-gradient-to-br from-brand-950/30 to-slate-900/90 shadow-lg shadow-brand-500/10"
+                  : "border-slate-800 hover:border-slate-700 bg-slate-900/40"
               }`}
             >
-              {/* Card Header */}
-              <div className="flex items-start justify-between gap-2">
-                <div className="space-y-1">
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    <span className="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-brand-500/20 text-brand-300 border border-brand-500/30">
-                      {exercise.muscleName}
-                    </span>
-                    <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                      {exercise.officeFocus}
+              <div className="p-4 sm:p-5 space-y-4">
+                {/* Visual Animation / Video Header Banner */}
+                <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 aspect-[16/9] max-h-[160px] flex items-center justify-center group">
+                  <ExerciseVisualGraphic
+                    type={exercise.visualAnimationType}
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300"
+                  />
+
+                  {/* Play Video Trigger Overlay */}
+                  {exercise.youtubeId && (
+                    <button
+                      onClick={() => setVideoModalExercise(exercise)}
+                      className="absolute inset-0 bg-black/40 hover:bg-black/20 flex items-center justify-center transition-all group-hover:backdrop-blur-[1px]"
+                      title="Ver demostración en video"
+                    >
+                      <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-brand-500/50 text-brand-300 text-xs font-bold shadow-lg transform group-hover:scale-110 transition-transform">
+                        <Video className="w-3.5 h-3.5 text-brand-400" />
+                        <span>Ver Video Tutorial</span>
+                      </div>
+                    </button>
+                  )}
+                </div>
+
+                {/* Card Title & Badges */}
+                <div className="space-y-1.5">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-brand-500/20 text-brand-300 border border-brand-500/30">
+                        {exercise.muscleName}
+                      </span>
+                      <span className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                        {exercise.officeFocus}
+                      </span>
+                    </div>
+
+                    <span className="flex-shrink-0 flex items-center gap-1 text-xs font-mono font-bold text-slate-300 bg-slate-800/80 px-2 py-1 rounded-lg border border-slate-700">
+                      <Clock className="w-3 h-3 text-brand-400" />
+                      <span>{exercise.durationSeconds}s</span>
                     </span>
                   </div>
+
                   <h4 className="text-base font-bold text-white leading-snug">
                     {exercise.title}
                   </h4>
                 </div>
 
-                <span className="flex-shrink-0 flex items-center gap-1 text-xs font-mono font-bold text-slate-300 bg-slate-800/80 px-2 py-1 rounded-lg border border-slate-700">
-                  <Clock className="w-3 h-3 text-brand-400" />
-                  <span>{exercise.durationSeconds}s</span>
-                </span>
-              </div>
-
-              {/* Collapsible Steps & Technique */}
-              <div className="space-y-2">
-                <div className="text-xs text-slate-300 leading-relaxed space-y-1.5 bg-slate-950/50 p-3 rounded-xl border border-slate-800">
-                  <div className="font-semibold text-slate-200 flex items-center gap-1 text-[11px] uppercase tracking-wider">
-                    <Sparkles className="w-3 h-3 text-brand-400" />
-                    <span>Pasos de Ejecución</span>
-                  </div>
-                  <ul className="space-y-1 pl-1">
-                    {exercise.instructions.slice(0, isExpanded ? undefined : 2).map((step, idx) => (
-                      <li key={idx} className="flex items-start gap-1.5 text-[11px] text-slate-300">
-                        <span className="text-brand-400 font-bold">•</span>
-                        <span>{step}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Breathing / Common Mistakes when expanded */}
-                  {isExpanded && (
-                    <div className="pt-2 border-t border-slate-800/80 space-y-2">
-                      <div className="flex items-start gap-1.5 text-[11px] text-teal-300">
-                        <Wind className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
-                        <span><strong>Respiración:</strong> {exercise.breathingTip}</span>
-                      </div>
-                      <div className="flex items-start gap-1.5 text-[11px] text-rose-300">
-                        <ShieldAlert className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
-                        <span><strong>Error común:</strong> {exercise.commonMistakes}</span>
-                      </div>
+                {/* Collapsible Steps & Technique */}
+                <div className="space-y-2">
+                  <div className="text-xs text-slate-300 leading-relaxed space-y-1.5 bg-slate-950/70 p-3 rounded-xl border border-slate-800/80">
+                    <div className="font-semibold text-slate-200 flex items-center gap-1 text-[11px] uppercase tracking-wider">
+                      <Sparkles className="w-3 h-3 text-brand-400" />
+                      <span>Pasos de Ejecución</span>
                     </div>
-                  )}
+                    <ul className="space-y-1 pl-1">
+                      {exercise.instructions.slice(0, isExpanded ? undefined : 2).map((step, idx) => (
+                        <li key={idx} className="flex items-start gap-1.5 text-[11px] text-slate-300">
+                          <span className="text-brand-400 font-bold">•</span>
+                          <span>{step}</span>
+                        </li>
+                      ))}
+                    </ul>
 
-                  {/* Expand / Collapse Button */}
-                  <button
-                    onClick={() => setExpandedExerciseId(isExpanded ? null : exercise.id)}
-                    className="text-[10px] font-bold text-brand-400 hover:text-brand-300 flex items-center gap-1 pt-1"
-                  >
-                    {isExpanded ? (
-                      <>
-                        <span>Ver menos</span>
-                        <ChevronUp className="w-3 h-3" />
-                      </>
-                    ) : (
-                      <>
-                        <span>Ver técnica completa ({exercise.instructions.length} pasos)</span>
-                        <ChevronDown className="w-3 h-3" />
-                      </>
+                    {/* Breathing / Common Mistakes when expanded */}
+                    {isExpanded && (
+                      <div className="pt-2 border-t border-slate-800/80 space-y-2 animate-sunrise">
+                        <div className="flex items-start gap-1.5 text-[11px] text-teal-300">
+                          <Wind className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
+                          <span><strong>Respiración:</strong> {exercise.breathingTip}</span>
+                        </div>
+                        <div className="flex items-start gap-1.5 text-[11px] text-rose-300">
+                          <ShieldAlert className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" />
+                          <span><strong>Error común:</strong> {exercise.commonMistakes}</span>
+                        </div>
+                      </div>
                     )}
-                  </button>
+
+                    {/* Expand / Collapse Button */}
+                    <button
+                      onClick={() => setExpandedExerciseId(isExpanded ? null : exercise.id)}
+                      className="text-[10px] font-bold text-brand-400 hover:text-brand-300 flex items-center gap-1 pt-1"
+                    >
+                      {isExpanded ? (
+                        <>
+                          <span>Ver menos</span>
+                          <ChevronUp className="w-3 h-3" />
+                        </>
+                      ) : (
+                        <>
+                          <span>Ver técnica completa ({exercise.instructions.length} pasos)</span>
+                          <ChevronDown className="w-3 h-3" />
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-800/80">
+              <div className="p-4 sm:p-5 pt-0 flex items-center justify-between gap-2 border-t border-slate-800/80 mt-2">
                 <button
                   onClick={() => onLaunchSingleExercise(exercise)}
-                  className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                  className="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-colors"
                 >
                   <Play className="w-3 h-3 text-brand-400 fill-brand-400" />
-                  <span>Realizar Ahora ({exercise.durationSeconds}s)</span>
+                  <span>Realizar ({exercise.durationSeconds}s)</span>
                 </button>
 
                 <button
                   onClick={() => toggleAddToRoutine(exercise)}
-                  className={`px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
+                  className={`px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
                     isAdded
                       ? "bg-brand-500 text-dark-bg shadow-sm"
                       : "bg-slate-800/80 hover:bg-brand-500/20 text-slate-300 hover:text-brand-300 border border-slate-700"
@@ -294,6 +322,58 @@ export const ExerciseBrowser: React.FC<ExerciseBrowserProps> = ({
           );
         })}
       </div>
+
+      {/* Video Modal Popup */}
+      {videoModalExercise && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-sunrise">
+          <div className="relative w-full max-w-2xl rounded-3xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl space-y-4 p-5 sm:p-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-400">
+                  {videoModalExercise.muscleName}
+                </span>
+                <h3 className="text-lg font-black text-white">
+                  {videoModalExercise.title}
+                </h3>
+              </div>
+              <button
+                onClick={() => setVideoModalExercise(null)}
+                className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold transition-colors"
+              >
+                ✕ Cerrar
+              </button>
+            </div>
+
+            <div className="relative rounded-2xl overflow-hidden aspect-video bg-black border border-slate-800 shadow-inner">
+              <iframe
+                className="w-full h-full"
+                src={`https://www.youtube.com/embed/${videoModalExercise.youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+                title={videoModalExercise.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+
+            <div className="bg-slate-950/70 p-3.5 rounded-2xl border border-slate-800 flex items-center justify-between gap-3">
+              <div className="text-xs text-slate-300">
+                <span className="text-teal-300 font-bold">Respiración: </span>
+                <span>{videoModalExercise.breathingTip}</span>
+              </div>
+              <button
+                onClick={() => {
+                  const ex = videoModalExercise;
+                  setVideoModalExercise(null);
+                  onLaunchSingleExercise(ex);
+                }}
+                className="px-4 py-2 rounded-xl bg-brand-500 hover:bg-brand-400 text-dark-bg font-black text-xs flex items-center gap-1.5 transition-transform active:scale-95 shadow-md flex-shrink-0"
+              >
+                <Play className="w-3 h-3 fill-dark-bg" />
+                <span>Iniciar Ejercicio</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
