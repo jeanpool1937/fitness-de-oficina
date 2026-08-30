@@ -1,16 +1,16 @@
-# Graph Report - lucid-bose  (2026-08-26)
+# Graph Report - lucid-bose  (2026-08-30)
 
 ## Corpus Check
-- 31 files · ~14,789 words
+- 37 files · ~20,591 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 168 nodes · 265 edges · 15 communities (14 shown, 1 thin omitted)
+- 193 nodes · 312 edges · 15 communities (14 shown, 1 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c1743720`
+- Built from commit: `8f224610`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -30,19 +30,19 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 17 edges
-2. `UserProgress` - 11 edges
-3. `getTodayDateString()` - 10 edges
-4. `SoundService` - 9 edges
+2. `SoundService` - 11 edges
+3. `UserProgress` - 11 edges
+4. `getTodayDateString()` - 10 edges
 5. `StorageService` - 8 edges
-6. `NotificationService` - 6 edges
-7. `getSupabaseConfig()` - 6 edges
-8. `🌟 Características Principales` - 6 edges
-9. `useMorningAlarm()` - 5 edges
-10. `WorkoutDay` - 5 edges
+6. `NotificationService` - 7 edges
+7. `ExerciseItem` - 6 edges
+8. `getSupabaseConfig()` - 6 edges
+9. `🌟 Características Principales` - 6 edges
+10. `useMorningAlarm()` - 5 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `App()` --calls--> `useMorningAlarm()`  [EXTRACTED]
-  src/App.tsx → src/hooks/useMorningAlarm.ts
+- `App()` --calls--> `getTodayDateString()`  [EXTRACTED]
+  src/App.tsx → src/services/storageService.ts
 - `SettingsModalProps` --references--> `UserProgress`  [EXTRACTED]
   src/components/SettingsModal.tsx → src/types/index.ts
 - `StatsPanelProps` --references--> `UserProgress`  [EXTRACTED]
@@ -62,24 +62,24 @@ Cohesion: 0.13
 Nodes (16): PhaseSelector(), PhaseSelectorProps, WeekDaySelector(), WeekDaySelectorProps, WorkoutCard(), WorkoutCardProps, YouTubeEmbed(), YouTubeEmbedProps (+8 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.20
-Nodes (12): HabitChecklist(), HabitChecklistProps, HeatmapCalendar(), HeatmapCalendarProps, BeforeInstallPromptEvent, InstallPwaBanner(), StatsPanel(), useWorkoutProgress() (+4 more)
+Cohesion: 0.13
+Nodes (19): BeforeInstallPromptEvent, InstallPwaBanner(), MorningModule(), MorningModuleProps, ExerciseItem, MUSCLE_GROUPS, MuscleGroup, WORKOUT_COOL_EXERCISES (+11 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.11
-Nodes (18): devDependencies, autoprefixer, postcss, tailwindcss, @types/canvas-confetti, @types/react, @types/react-dom, typescript (+10 more)
+Cohesion: 0.12
+Nodes (16): devDependencies, autoprefixer, postcss, tailwindcss, @types/canvas-confetti, @types/react, @types/react-dom, typescript (+8 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowImportingTsExtensions, isolatedModules, jsx, lib, module, moduleResolution, noEmit (+10 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.23
-Nodes (11): Navbar(), NavbarProps, SettingsModal(), clearSupabaseConfig(), getSupabaseClient(), getSupabaseConfig(), saveSupabaseConfig(), testSupabaseConnection() (+3 more)
+Cohesion: 0.13
+Nodes (21): HeatmapCalendar(), HeatmapCalendarProps, Navbar(), NavbarProps, SettingsModal(), SettingsModalProps, StatsPanel(), StatsPanelProps (+13 more)
 
 ### Community 5 - "Community 5"
-Cohesion: 0.21
-Nodes (6): MorningModule(), MorningModuleProps, MorningAlarmState, useMorningAlarm(), NotificationService, NotificationStatus
+Cohesion: 0.24
+Nodes (4): OfficeBreakTimer(), OfficeBreakTimerProps, NotificationService, NotificationStatus
 
 ### Community 6 - "Community 6"
 Cohesion: 0.24
@@ -94,30 +94,32 @@ Cohesion: 0.17
 Nodes (11): 1. 🌅 Módulo 6:00 AM y Recordatorios, 2. 📺 Visor de Rutinas Diarias y Video, 3. ✅ Checklist, Hábitos y Analíticas, 4. ☁️ Sincronización Cross-Device y Fallback Offline, 5. 📱 PWA & Optimización iOS Mobile-First, 🌟 Características Principales, 🚀 Comandos de Terminal, ☁️ Configuración de Supabase (Opcional) (+3 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.38
-Nodes (5): SettingsModalProps, StatsPanelProps, getDefaultUserProgress(), StorageService, UserProgress
+Cohesion: 0.67
+Nodes (3): HabitChecklist(), HabitChecklistProps, formatDateDisplay()
 
 ### Community 10 - "Community 10"
-Cohesion: 0.25
-Nodes (8): dependencies, canvas-confetti, clsx, lucide-react, react, react-dom, @supabase/supabase-js, tailwind-merge
+Cohesion: 0.12
+Nodes (16): dependencies, canvas-confetti, clsx, lucide-react, react, react-dom, @supabase/supabase-js, tailwind-merge (+8 more)
 
 ## Knowledge Gaps
-- **73 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+68 more)
+- **81 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+76 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `SoundService` connect `Community 6` to `Community 0`, `Community 5`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
-- **Why does `UserProgress` connect `Community 9` to `Community 0`, `Community 1`, `Community 4`?**
-  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `SoundService` connect `Community 6` to `Community 0`, `Community 1`, `Community 5`?**
+  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+- **Why does `NotificationService` connect `Community 5` to `Community 1`?**
+  _High betweenness centrality (0.023) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `Community 2` to `Community 10`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _73 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _81 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.12648221343873517 - nodes in this community are weakly interconnected._
+- **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.13227513227513227 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
-- **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
